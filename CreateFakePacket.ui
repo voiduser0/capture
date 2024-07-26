@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateFakePacketClass</class>
+ <widget class="QWidget" name="CreateFakePacketClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>749</width>
+    <height>583</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CreateFakePacket</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTreeView" name="fakePktTree">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="fakePktInfo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="pktInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_16">
+       <item>
+        <widget class="QWidget" name="widget_28" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <item>
+           <widget class="QLabel" name="pktNicLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>网卡信息：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="pktNicInfoLabel">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="pktGroupBox">
+         <property name="title">
+          <string>构造的包信息如下：</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPlainTextEdit" name="pktInfoPlainEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_3" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="pktInfoOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>发送</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pktInfoCancelBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>取消</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ethInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="ethGroupBox">
+         <property name="title">
+          <string>构造Ethernet</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_13">
+          <item row="0" column="0">
+           <widget class="QLabel" name="ethDstLabel">
+            <property name="text">
+             <string>目标MAC地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="ethDstLEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="ethSrcLabel">
+            <property name="text">
+             <string>源MAC地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="ethSrcLEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="ethTypeLabel">
+            <property name="text">
+             <string>类型：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="ethTypeLEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="ethPayloadLabel">
+            <property name="text">
+             <string>数据负载：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="ethPayloadLEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="ethInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="ethOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="arpInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="arpGroupBox">
+         <property name="title">
+          <string>构造ARP</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="arpHardwareTypeLabel">
+            <property name="text">
+             <string>硬件类型：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="arpHardwareTypeLEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="arpProtocolTypeLabel">
+            <property name="text">
+             <string>协议类型：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="arpProtocolTypeLEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="arpMacLengthLabel">
+            <property name="text">
+             <string>硬件地址长度：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="arpMacLengthLEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="arpIplengthLabel">
+            <property name="text">
+             <string>协议地址长度：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="arpIplengthLEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="arpOpCodeLabel">
+            <property name="text">
+             <string>操作码：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="arpOpCodeLEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="arpSrcMacLabel">
+            <property name="text">
+             <string>源MAC地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="arpSrcMacLEdit"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="arpSrcIpLabel">
+            <property name="text">
+             <string>源IP地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="arpSrcIpLEdit"/>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="arpDstMacLabel">
+            <property name="text">
+             <string>目标MAC地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLineEdit" name="arpDstMacLEdit"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="arpDstIpLabel">
+            <property name="text">
+             <string>目标IP地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLineEdit" name="arpDstIpLEdit"/>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="arpPayloadLabel">
+            <property name="text">
+             <string>数据载荷：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QLineEdit" name="arpPayloadLEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="arpInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_9" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="arpOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ipInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QGroupBox" name="ipGroupBox">
+         <property name="title">
+          <string>构造IP</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="ipVersionLabel">
+            <property name="text">
+             <string>版本：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="ipVersionLEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="ipHeadLengthLabel">
+            <property name="text">
+             <string>头部大小：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="ipHeadLengthLEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="ipTOSLabel">
+            <property name="text">
+             <string>服务类型：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="ipTOSLEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="ipTotalLengthLabel">
+            <property name="text">
+             <string>总大小：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="ipTotalLEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="ipIdentificationLabel">
+            <property name="text">
+             <string>标识符：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="ipIdentificationLEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="ipFlagLabel">
+            <property name="text">
+             <string>标志</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="ipFlagLEdit"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="ipOffsetLabel">
+            <property name="text">
+             <string>片偏移：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="ipOffsetLEdit"/>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="ipTTLLabel">
+            <property name="text">
+             <string>生存时间：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLineEdit" name="ipTTLLEdit"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="IpProtocolLabel">
+            <property name="text">
+             <string>上层协议：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLineEdit" name="IpProtocolLEdit"/>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="ipChecksumLabel">
+            <property name="text">
+             <string>校验和：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QLineEdit" name="ipChecksumLEdit"/>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="ipSrcLabel">
+            <property name="text">
+             <string>源IP地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="QLineEdit" name="ipSrcLEdit"/>
+          </item>
+          <item row="11" column="0">
+           <widget class="QLabel" name="ipDstLabel">
+            <property name="text">
+             <string>目标IP地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1">
+           <widget class="QLineEdit" name="ipDstLEdit"/>
+          </item>
+          <item row="12" column="0">
+           <widget class="QLabel" name="ipPayloadLabel">
+            <property name="text">
+             <string>数据载荷：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1">
+           <widget class="QLineEdit" name="ipPayloadLEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="ipInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_10" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QPushButton" name="ipOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="icmpInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QGroupBox" name="icmpGroupBox">
+         <property name="title">
+          <string>构造ICMP</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="icmpTypeLabel">
+            <property name="text">
+             <string>类型：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="icmpTypeLEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="icmpCodeLabel">
+            <property name="text">
+             <string>代码：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="icmpCodeLEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="icmpChecksumLabel">
+            <property name="text">
+             <string>校验和：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="icmpChecksumLEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="icmpIdentificationLabel">
+            <property name="text">
+             <string>标识符：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="icmpIdentificationLEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="icmpSequenceLabel">
+            <property name="text">
+             <string>次序：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="icmpSequenceLEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="icmpPayloadLabel">
+            <property name="text">
+             <string>数据：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="icmpPayloadLEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="icmpInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_11" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="icmpOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tcpInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QGroupBox" name="tcpGroupBox">
+         <property name="title">
+          <string>构造TCP</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="tcpSrcPortLabel">
+            <property name="text">
+             <string>源端口：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="tcpSrcPortLEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="tcpDstPortLabel">
+            <property name="text">
+             <string>目标端口：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="tcpDstPortLEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="tcpSeqLabel">
+            <property name="text">
+             <string>序列号：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="tcpSeqLEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="tcpAckLabel">
+            <property name="text">
+             <string>确认号：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="tcpAckLEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="tcpHeadLengthLabel">
+            <property name="text">
+             <string>头部大小：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="tcpHeadLengthLEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="tcpFlagLabel">
+            <property name="text">
+             <string>标志：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="tcpFlagLEdit"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="tcpWinSizeLabel">
+            <property name="text">
+             <string>窗口大小：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="tcpWinSizeLEdit"/>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="tcpChecksumLabel">
+            <property name="text">
+             <string>校验和：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLineEdit" name="tcpChecksumLEdit"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="tcpUrgentLabel">
+            <property name="text">
+             <string>紧急指针：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLineEdit" name="tcpUrgentLEdit"/>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="tcpPayloadLabel">
+            <property name="text">
+             <string>数据载荷：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QLineEdit" name="tcpPayloadLEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="tcpInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_12" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="tcpOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="udpInfo">
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QGroupBox" name="udpGroupBox">
+         <property name="title">
+          <string>构造UDP</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="udpSrcPortLabel">
+            <property name="text">
+             <string>源端口：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="udpSrcPortLEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="udpDstPortLabel">
+            <property name="text">
+             <string>目标端口：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="udpDstPortLEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="udpDataLengthLabel">
+            <property name="text">
+             <string>数据长度：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="udpDataLengthLEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="udpChecksumLabel">
+            <property name="text">
+             <string>校验和：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="udpChecksumLEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="udpPayloadLabel">
+            <property name="text">
+             <string>数据载荷：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="udpPayloadLEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="udpInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_13" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="udpOkBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="arpSpoof">
+      <layout class="QVBoxLayout" name="verticalLayout_15">
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <item>
+           <widget class="QLabel" name="spoofNicLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>网卡信息：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="spoofNicInfoLabel">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="ArpSpoofGroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>ARP欺骗</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_17">
+          <item>
+           <widget class="QLabel" name="sproofDstIpLabel">
+            <property name="text">
+             <string>目标IP地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="sproofDstIpLEdit"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="sproofDstMacLabel">
+            <property name="text">
+             <string>目标MAC地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="sproofDstMacLEdit"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="sproofIpLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>欺骗IP地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="sproofIpLEdit"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="sproofMacLabel">
+            <property name="text">
+             <string>欺骗MAC地址：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="sproofMacLEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="spoofInfoPlainEdit"/>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_27" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <item>
+           <widget class="QPushButton" name="spoofStartBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>开始</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="spoofStopBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>停止</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

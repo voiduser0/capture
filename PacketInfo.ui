@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PacketInfoClass</class>
+ <widget class="QMainWindow" name="PacketInfoClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QComboBox" name="comboBoxSelectDevices">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>请选择网卡</string>
+         </property>
+         <property name="placeholderText">
+          <string>网卡</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditFilter"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QSplitter" name="splitter_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <widget class="QTableWidget" name="tableWidgetPacketList">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777211</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustIgnored</enum>
+          </property>
+         </widget>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QTreeWidget" name="treeWidgetPktInfo">
+           <attribute name="headerVisible">
+            <bool>true</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string notr="true">1</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QTableWidget" name="tableWidgetDataInfo">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_C">
+    <property name="title">
+     <string>捕获(&amp;C)</string>
+    </property>
+    <addaction name="actStart"/>
+    <addaction name="actStop"/>
+    <addaction name="actRestart"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>功能</string>
+    </property>
+    <addaction name="actUp"/>
+    <addaction name="actDown"/>
+    <addaction name="actTop"/>
+    <addaction name="actBottom"/>
+    <addaction name="separator"/>
+    <addaction name="actChart"/>
+    <addaction name="actCreate"/>
+   </widget>
+   <widget class="QMenu" name="menud">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actOpen"/>
+    <addaction name="actSave"/>
+   </widget>
+   <addaction name="menud"/>
+   <addaction name="menu_C"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actOpen"/>
+   <addaction name="actSave"/>
+   <addaction name="actStart"/>
+   <addaction name="actStop"/>
+   <addaction name="actRestart"/>
+   <addaction name="separator"/>
+   <addaction name="actUp"/>
+   <addaction name="actDown"/>
+   <addaction name="actTop"/>
+   <addaction name="actBottom"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actStart">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/start.png</normaloff>:/Icons/start.png</iconset>
+   </property>
+   <property name="text">
+    <string>开始(&amp;S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actStop">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/stop.png</normaloff>:/Icons/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>停止(&amp;T)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actRestart">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/restart.png</normaloff>:/Icons/restart.png</iconset>
+   </property>
+   <property name="text">
+    <string>清空(&amp;R)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actUp">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/up.png</normaloff>:/Icons/up.png</iconset>
+   </property>
+   <property name="text">
+    <string>上个分组</string>
+   </property>
+  </action>
+  <action name="actDown">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/down.png</normaloff>:/Icons/down.png</iconset>
+   </property>
+   <property name="text">
+    <string>下个分组</string>
+   </property>
+  </action>
+  <action name="actTop">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/top.png</normaloff>:/Icons/top.png</iconset>
+   </property>
+   <property name="text">
+    <string>首个分组</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Home</string>
+   </property>
+  </action>
+  <action name="actBottom">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/bottom.png</normaloff>:/Icons/bottom.png</iconset>
+   </property>
+   <property name="text">
+    <string>最新分组</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+End</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/save.png</normaloff>:/Icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存文件(&amp;S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/open.png</normaloff>:/Icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开文件(&amp;O)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actChart">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/pie-chart.png</normaloff>:/Icons/pie-chart.png</iconset>
+   </property>
+   <property name="text">
+    <string>封包数量</string>
+   </property>
+  </action>
+  <action name="actCreate">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Icons/packet.png</normaloff>:/Icons/packet.png</iconset>
+   </property>
+   <property name="text">
+    <string>构造封包</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MainWindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
